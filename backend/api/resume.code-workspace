@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../resume"
+		},
+		{
+			"path": "../../../resume/backend"
+		}
+	],
+	"settings": {
+		"debug.internalConsoleOptions": "neverOpen"
+	}
+}
