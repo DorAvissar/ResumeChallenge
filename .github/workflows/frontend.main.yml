@@ -15,7 +15,7 @@ jobs:
       with:
           creds: ${{ secrets.AZURE_CRED }}
 
-      - name: Install AzCopy
+    - name: Install AzCopy
       uses: azure/get-toolset@v1
       with:
         azureaccounttype: servicePrincipal
