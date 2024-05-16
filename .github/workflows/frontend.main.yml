@@ -11,35 +11,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-
-    - name: Get changed files
-      id: changes
-      run: |
-        echo "##[group]Get changed files"
-        git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- frontend/ > changed_files.txt
-        cat changed_files.txt
-        echo "##[endgroup]"
-      continue-on-error: true
-
     - uses: azure/login@v1
       with:
           creds: ${{ secrets.AZURE_CRED }}
 
-    - name: Upload changed files to blob storage
-      if: success() && steps.changes.outputs.changed_files != ''
-      run: |
-        echo "##[group]Upload changed files"
-        while IFS= read -r file; do
-          az storage blob upload --account-name azureresumesta --auth-mode key -c '$web' -f "$file" -n "${file#frontend/}" --overwrite
-        done < changed_files.txt
-        echo "##[endgroup]"
+      - name: Install AzCopy
+      uses: azure/get-toolset@v1
+      with:
+        azureaccounttype: servicePrincipal
+        accountEndpoint: https://login.microsoftonline.com
 
-    - name: Purge CDN endpoint
-      if: success() && steps.changes.outputs.changed_files != ''
+    - name: Upload only changed files to blob storage
       run: |
-        az cdn endpoint purge --content-paths  "/*" --profile-name "StaticSiteHostingProject" --name "azureresumesta-z20-web-core-windows-net" --resource-group "azureresume-rg"
+        az storage blob sync --account-name azureresumesta --auth-mode login --source frontend/ --destination $web --only-newer
+        
+    - name: Purge CDN endpoint
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+           az cdn endpoint purge --content-paths  "/*" --profile-name "StaticSiteHostingProject" --name "azureresumesta-z20-web-core-windows-net" --resource-group "azureresume-rg"
 
   # Azure logout
     - name: logout
