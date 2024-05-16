@@ -1,5 +1,5 @@
 name: deploy_frontend 
-#deploy when push is made from frontend folder
+# Deploy when a push is made to the frontend folder
 on:
     push:
         branches: [ main ]
@@ -11,20 +11,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+
+    - name: Get changed files
+      id: changes
+      run: |
+        echo "##[group]Get changed files"
+        git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- frontend/ > changed_files.txt
+        cat changed_files.txt
+        echo "##[endgroup]"
+
     - uses: azure/login@v1
       with:
           creds: ${{ secrets.AZURE_CRED }}
 
-    - name: Upload to blob storage
-      uses: azure/CLI@v1
-      with:
-        inlineScript: |
-            az storage blob upload-batch --account-name azureresumesta --auth-mode key -d '$web' -s frontend/. --overwrite
+    - name: Upload changed files to blob storage
+      if: steps.changes.outputs.changed_files != ''
+      run: |
+        echo "##[group]Upload changed files"
+        while IFS= read -r file; do
+          az storage blob upload --account-name azureresumesta --auth-mode key -c '$web' -f "$file" -n "${file#frontend/}" --overwrite
+        done < changed_files.txt
+        echo "##[endgroup]"
+
     - name: Purge CDN endpoint
-      uses: azure/CLI@v1
-      with:
-        inlineScript: |
-           az cdn endpoint purge --content-paths  "/*" --profile-name "StaticSiteHostingProject" --name "azureresumesta-z20-web-core-windows-net" --resource-group "azureresume-rg"
+      if: steps.changes.outputs.changed_files != ''
+      run: |
+        az cdn endpoint purge --content-paths  "/*" --profile-name "StaticSiteHostingProject" --name "azureresumesta-z20-web-core-windows-net" --resource-group "azureresume-rg"
 
   # Azure logout
     - name: logout
