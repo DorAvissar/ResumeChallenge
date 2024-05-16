@@ -1,5 +1,5 @@
 name: deploy_frontend 
-# Deploy when a push is made to the frontend folder!
+# Deploy when a push is made to the frontend folder
 on:
     push:
         branches: [ main ]
@@ -15,16 +15,12 @@ jobs:
       with:
           creds: ${{ secrets.AZURE_CRED }}
 
-    - name: Install AzCopy
-      uses: azure/get-toolset@v1
+    - name: Upload to blob storage
+      uses: azure/CLI@v1
       with:
-        azureaccounttype: servicePrincipal
-        accountEndpoint: https://login.microsoftonline.com
+        inlineScript: |
+            az storage blob upload-batch --account-name azureresumesta --auth-mode key -d '$web' -s frontend/. --overwrite
 
-    - name: Upload only changed files to blob storage
-      run: |
-        az storage blob sync --account-name azureresumesta --auth-mode login --source frontend/ --destination $web --only-newer
-        
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
