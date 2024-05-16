@@ -22,6 +22,11 @@
    <link rel="stylesheet" href="css/media-queries.css">
    <link rel="stylesheet" href="css/animation.css">
    <link rel="stylesheet" href="css/fonts.css">
+   <style>
+      .nav a {
+         font-weight: bold;
+      }
+   </style>
 
 
    <!-- Script
@@ -39,7 +44,7 @@
 
    <!-- Header
    ================================================== -->
-   <header id="home">
+   <header id="home" class="section-slide" >
 
       <nav id="nav-wrap">
 
@@ -58,11 +63,12 @@
          <div class="banner-text">
             <h1 class="responsive-headline">Hi, I'm Dor Avissar</h1>
             
-            <p>and this page has been viewed <a id="counter"></a> times :) </p> 
+            <p>and you are the <a id="counter"></a> th visitor , enjoy your stay :) </p> 
             <ul class="social">
-               <li><a href="https://www.linkedin.com/in/dor-avissar"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="https://github.com/DorAvissar/resume.git"><i class="fa fa-github"></i></a></li>
+               <li><a href="https://www.linkedin.com/in/dor-avissar" target="_blank"><img src="linkedin_photo.jpg" alt="LinkedIn" width="30" height="30"></a></li>
+               <li><a href="https://github.com/DorAvissar" target="_blank"><img src="github_photo.jpg" alt="GitHub" width="30" height="30"></a></li>
             </ul>
+                       
          </div>
       </div>
 
@@ -72,14 +78,38 @@
 
    </header> <!-- Header End -->
 
+<!-- About Section
+   ================================================== -->
+   <section id="about" class="section-slide">
+
+      <div class="row">
+
+         <div class="three columns">
+
+            <img class="profile-pic"  src="resumephoto.jpg" alt="" />
+
+         </div>
+
+         <div class="nine columns main-col">
+
+            <h2>ABOUT ME</h2>
+
+            <p>Hi, I'm Dor! I'm a highly motivated individual with a strong interest in DevOps and a desire to contribute to a fast-paced, collaborative environment. I'm eager to learn and grow within a dynamic DevOps team, and I built this page as part of the Cloud Azure Resume Challenge.</p>
+
+
+         </div> <!-- end .main-col -->
+
+      </div>
+
+   </section> <!-- About Section End-->
 
    <!-- Resume Section
    ================================================== -->
-   <section id="resume">
+   <section id="resume" class="section-slide" >
 
       <!-- Education
       ----------------------------------------------- -->
-      <div class="row education">
+      <div class="row education" class="section-slide">
 
          <div class="three columns header-col">
             <h1><span>Education</span></h1>
@@ -110,7 +140,7 @@
                <div class="twelve columns">
 
                   <h3>High School at Ben Zvi High School</h3>
-                  <p class="info">Full matriculation, major in computer science (programming language: Java)</p>
+                  <p>Full matriculation, major in computer science (programming language: Java)</p>
 
                </div>
 
@@ -173,9 +203,13 @@
       <div class="row work">
 
          <div class="three columns header-col">
-            <h1><span>Technical Skills & more </span></h1>
-         </div>
-
+            <h1>
+                <span>Technical Skills &</span> 
+                <span style="vertical-align: sub;">More</span>
+            </h1>
+        </div>
+        
+        
          <div class="nine columns main-col">
 
             <div class="row item">
@@ -237,7 +271,34 @@
    <script src="jquery.fittext.js"></script>
    <script src="magnific-popup.js"></script>
    <script src="init.js"></script>
-
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function(){
+         // Add smooth scrolling to all links
+         $("a").on('click', function(event) {
+   
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+               // Prevent default anchor click behavior
+               event.preventDefault();
+   
+               // Store hash
+               var hash = this.hash;
+   
+               // Using jQuery's animate() method to add smooth page scroll
+               // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+               $('html, body').animate({
+                  scrollTop: $(hash).offset().top
+               }, 800, function(){
+   
+                  // Add hash (#) to URL when done scrolling (default click behavior)
+                  window.location.hash = hash;
+               });
+            } // End if
+         });
+      });
+   </script>
+   
 </body>
 
 </html>
