@@ -1,5 +1,5 @@
 name: deploy_frontend 
-# Deploy when a push is made to the frontend folder
+# Deploy when a push is made to the frontend folder.
 on:
     push:
         branches: [ main ]
