@@ -1,34 +1,43 @@
-name: deploy_frontend 
+name: deploy_frontend
+
 # Deploy when a push is made to the frontend folder
 on:
-    push:
-        branches: [ main ]
-        paths:
-        - 'frontend/**'
+  push:
+    branches: [ main ]
+    paths:
+      - 'frontend/**'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+
     - uses: azure/login@v1
       with:
-          creds: ${{ secrets.AZURE_CRED }}
+        creds: ${{ secrets.AZURE_CRED }}
 
-    - name: Upload to blob storage
+    - name: Get changed files
+      run: |
+        changed_files=$(git diff --cached --name-only --diff-filter=d HEAD~)
+        echo "::set-output name=changed_files::$changed_files"
+
+    - name: Upload only changed files to blob storage
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name azureresumesta --auth-mode key -d '$web' -s frontend/. --overwrite
+          IFS=',' read -r -a files <<< "${{ steps.get_changed_files.outputs.changed_files }}"
+          for file in "${files[@]}"; do
+            az storage blob upload --account-name azureresumesta --auth-mode key -f "$file" -d '$web/frontend/$file'
+          done
 
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
         inlineScript: |
-           az cdn endpoint purge --content-paths  "/*" --profile-name "StaticSiteHostingProject" --name "azureresumesta-z20-web-core-windows-net" --resource-group "azureresume-rg"
+          az cdn endpoint purge --content-paths  "/*" --profile-name "StaticSiteHostingProject" --name "azureresumesta-z20-web-core-windows-net" --resource-group "azureresume-rg"
 
-  # Azure logout
     - name: logout
       run: |
-            az logout
+        az logout
       if: always()
