@@ -1,6 +1,6 @@
 name: deploy_frontend
 
-# Deploy when a push is made to the frontend folder
+# Trigger on pushes to the main branch and changes to frontend files
 on:
   push:
     branches: [ main ]
@@ -17,12 +17,13 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CRED }}
 
-    - name: Get changed files
+    # Option 1: Using git diff (identify deleted and modified files)
+    - name: Get changed files (git diff)
       run: |
-        changed_files=$(git diff --cached --name-only --diff-filter=d HEAD~)
+        changed_files=$(git diff --cached --name-only --diff-filter=d,acm HEAD --)  # d=deleted, a=added, c=modified
         echo "::set-output name=changed_files::$changed_files"
 
-    - name: Upload only changed files to blob storage
+    - name: Upload changed files to blob storage (git diff)
       uses: azure/CLI@v1
       with:
         inlineScript: |
@@ -31,11 +32,16 @@ jobs:
             az storage blob upload --account-name azureresumesta --auth-mode key -f "$file" -d '$web/frontend/$file'
           done
 
+    # Option 2: Using a dedicated action for efficiency (consider for large deployments)
+    # - uses: your-preferred-upload-action  # Replace with the specific action you choose
+    #   with:
+    #     # Provide necessary configuration for the chosen upload action
+
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az cdn endpoint purge --content-paths  "/*" --profile-name "StaticSiteHostingProject" --name "azureresumesta-z20-web-core-windows-net" --resource-group "azureresume-rg"
+          az cdn endpoint purge --content-paths  "/*" --profile-name "StaticSiteHostingProject" --name "azureresumesta-z20-web-core-windows-net" --resource-group "azureresumesta-rg"
 
     - name: logout
       run: |
