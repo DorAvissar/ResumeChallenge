@@ -27,21 +27,22 @@ Over the course of two intensive weekends, totaling around 30-40 hours, I devote
 - Azure Functions Extensions
 - C# Extension
 - Azure Storage Extension
-- A cheap shared hosting provider to host a Wordpress blog
+- A cheap domain provider 
 
 ## Front-end
 ## Phase-1 (Building the Resume-Website)
-<p>So the first phase was to build a resume static website using html and css. Since I didnt wanna spend too much time on desinging the resume website I used a template from the internet and altered the code depending on how I wanted it to look. Then I added all the details necessary for the resume page.</p>
+<p>So the first phase was to build a resume static website using html and css. Since I didnt want to spend too much time on desinging the resume website I used a template from the internet and altered the code depending on how I wanted it to look. Then I added all the details necessary for the resume page.</p>
 <img src="https://github.com/DorAvissar/ResumeChallenge-/blob/main/frontend/frontscreen.jpg?raw=true">
 This is the result of the staic resume page.
 
 ## Phase-2 (Hosting the website in azure)
 <p>This phase is all about deploying the static site to the cloud. In Azure we can achieve this by deploying the static site to a blob storage. Azure Blob storage has an option to configure it to host static websites. Once configured you can find a container named as $web. Now you can upload the website files directly from the portal or the cli. I personally chose to do it through the cli. The image below shows you the uploaded files for the static site in the blob storage</p>
 <img src="https://github.com/DorAvissar/ResumeChallenge-/blob/main/frontend/WEB.jpg?raw=true">
-And you can access the static website through the primary endpoint given by azure for this particular site. [You can find it in the capabilites section in the overview of the Blob account and click "Static website" and find the primary and secondary endpoints]
+And you can access the static website through the primary endpoint given by azure for this particular site. [You can find it in the capabilites section in the overview of the Blob account and click "Static website" and find the primary and secondary endpoints], later i connected the Domain I purchased to the Static website to generate a short and accessible url.
 
 ## Phase-3 (Domain and CDN)
-I bought a domain (on godaddy - "resumedorav.online") for this project. I could have used Azure DNS but my subscription credits wasnt able to actually get a domain name. Then I pointed this domain to the Azure CDN endpoint. CDN refers to content delivery network. It is a network of multiple proxy servers with a primary goal of delivering content with high availability. So users across different geographical locations can access it faster.
+I bought a domain (on godaddy -  <a href="https://azureresumesta.z20.web.core.windows.net/"> resumedorav.online</a>) for this project. 
+I could have used Azure DNS but my subscription credits wasnt able to actually get a domain name. Then I pointed this domain to the Azure CDN endpoint. CDN refers to content delivery network. It is a network of multiple proxy servers with a primary goal of delivering content with high availability. So users across different geographical locations can access it faster.
   
 
 ## Back-end
