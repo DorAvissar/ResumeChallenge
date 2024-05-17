@@ -1,7 +1,4 @@
 # Azure Cloud Resume Challenge
-
-# Cloud Resume Challenge for Azure
-
 Welcome to my Cloud Resume Challenge for Azure project! ☁️
 
 I began by mastering the basics and earned my AZ-900 Azure Fundamentals certification. After completing the certification, I dedicated myself to the Cloud Resume Challenge for Azure.
@@ -35,12 +32,12 @@ Over the course of two intensive weekends, totaling around 30-40 hours, I devote
 ## Front-end
 ## Phase-1 (Building the Resume-Website)
 <p>So the first phase was to build a resume static website using html and css. Since I didnt wanna spend too much time on desinging the resume website I used a template from the internet and altered the code depending on how I wanted it to look. Then I added all the details necessary for the resume page.</p>
-<img src="https://github.com/DorAvissar/ResumeChallenge-/blob/main/frontend/frontscreen.jpg>
+<img src="https://github.com/DorAvissar/ResumeChallenge-/blob/main/frontend/frontscreen.jpg?raw=true">
 This is the result of the staic resume page.
 
 ## Phase-2 (Hosting the website in azure)
 <p>This phase is all about deploying the static site to the cloud. In Azure we can achieve this by deploying the static site to a blob storage. Azure Blob storage has an option to configure it to host static websites. Once configured you can find a container named as $web. Now you can upload the website files directly from the portal or the cli. I personally chose to do it through the cli. The image below shows you the uploaded files for the static site in the blob storage</p>
-<img src="https://github.com/DorAvissar/ResumeChallenge-/blob/main/frontend/WEB.jpg">
+<img src="https://github.com/DorAvissar/ResumeChallenge-/blob/main/frontend/WEB.jpg?raw=true">
 And you can access the static website through the primary endpoint given by azure for this particular site. [You can find it in the capabilites section in the overview of the Blob account and click "Static website" and find the primary and secondary endpoints]
 
 ## Phase-3 (Domain and CDN)
