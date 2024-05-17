@@ -1,0 +1,6 @@
+C:\Users\DorAv\Desktop\project\backend\tests\obj\Debug\netcoreapp8.0\tests.csproj.AssemblyReference.cache
+C:\Users\DorAv\Desktop\project\backend\tests\obj\Debug\netcoreapp8.0\tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DorAv\Desktop\project\backend\tests\obj\Debug\netcoreapp8.0\tests.AssemblyInfoInputs.cache
+C:\Users\DorAv\Desktop\project\backend\tests\obj\Debug\netcoreapp8.0\tests.AssemblyInfo.cs
+C:\Users\DorAv\Desktop\project\backend\tests\obj\Debug\netcoreapp8.0\tests.csproj.CoreCompileInputs.cache
+C:\Users\DorAv\Desktop\project\backend\tests\obj\Debug\netcoreapp8.0\tests.sourcelink.json
