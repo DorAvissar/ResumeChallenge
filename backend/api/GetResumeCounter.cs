@@ -45,11 +45,11 @@ public static async Task<HttpResponseData> Run(
 
     try
     {
-        // Read the item
+        // Read the item !
         ItemResponse<Counter> response = await container.ReadItemAsync<Counter>("1", new PartitionKey("1"));
         Counter counter = response.Resource;
 
-        // Update the item
+        // Update the item ! 
         counter.Count += 1;
 
         // Replace the item in the database
