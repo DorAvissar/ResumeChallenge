@@ -1,6 +1,7 @@
 # Azure Cloud Resume Challenge
 Welcome to my Cloud Resume Challenge for Azure project! ☁️
 
+
 I began by mastering the basics and earned my AZ-900 Azure Fundamentals certification. After completing the certification, I dedicated myself to the Cloud Resume Challenge for Azure.
 
 Over the course of two intensive weekends, totaling around 30-40 hours, I devoted significant effort to this project. Whether you're an experienced professional or new to Azure, I hope my project inspires and assists you on your own cloud computing journey. Let's dive in together!
