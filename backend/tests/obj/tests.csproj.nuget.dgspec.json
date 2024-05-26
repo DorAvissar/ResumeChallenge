@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\tests.csproj": {}
+    "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\Tests.csproj": {}
   },
   "projects": {
-    "c:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\api\\api.csproj": {
+    "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\api\\api.csproj",
+        "projectUniqueName": "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "c:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\api\\api.csproj",
+        "projectPath": "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\api\\api.csproj",
         "packagesPath": "C:\\Users\\DorAv\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\api\\obj\\",
+        "outputPath": "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DorAv\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -99,14 +99,14 @@
         }
       }
     },
-    "c:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\tests.csproj": {
+    "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\tests.csproj",
-        "projectName": "tests",
-        "projectPath": "c:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\tests.csproj",
+        "projectUniqueName": "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\Tests.csproj",
+        "projectName": "Tests",
+        "projectPath": "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\Tests.csproj",
         "packagesPath": "C:\\Users\\DorAv\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\obj\\",
+        "outputPath": "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DorAv\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -121,8 +121,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "c:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\api\\api.csproj": {
-                "projectPath": "c:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\api\\api.csproj"
+              "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\api\\api.csproj": {
+                "projectPath": "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\api\\api.csproj"
               }
             }
           }
@@ -142,7 +142,7 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Http.Abstractions": {
+            "Microsoft.AspNetCore.Http": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
@@ -150,9 +150,17 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
-            "Microsoft.Azure.WebJobs": {
+            "Microsoft.Azure.Functions.Worker.Extensions.CosmosDB": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[4.8.1, )"
+            },
+            "Microsoft.Azure.WebJobs.Extensions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Azure.WebJobs.Extensions.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
