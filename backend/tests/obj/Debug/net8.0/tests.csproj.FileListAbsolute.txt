@@ -166,3 +166,13 @@ C:\Users\DorAv\Desktop\project\backend\tests\obj\Debug\net8.0\refint\tests.dll
 C:\Users\DorAv\Desktop\project\backend\tests\obj\Debug\net8.0\tests.pdb
 C:\Users\DorAv\Desktop\project\backend\tests\obj\Debug\net8.0\tests.genruntimeconfig.cache
 C:\Users\DorAv\Desktop\project\backend\tests\obj\Debug\net8.0\ref\tests.dll
+c:\Users\DorAv\Desktop\DevOps\Projects\ResumeChallenge\backend\tests\bin\Debug\net8.0\CoverletSourceRootsMapping_tests
+c:\Users\DorAv\Desktop\DevOps\Projects\ResumeChallenge\backend\tests\obj\Debug\net8.0\tests.csproj.AssemblyReference.cache
+c:\Users\DorAv\Desktop\DevOps\Projects\ResumeChallenge\backend\tests\obj\Debug\net8.0\tests.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\DorAv\Desktop\DevOps\Projects\ResumeChallenge\backend\tests\obj\Debug\net8.0\tests.AssemblyInfoInputs.cache
+c:\Users\DorAv\Desktop\DevOps\Projects\ResumeChallenge\backend\tests\obj\Debug\net8.0\tests.AssemblyInfo.cs
+c:\Users\DorAv\Desktop\DevOps\Projects\ResumeChallenge\backend\tests\obj\Debug\net8.0\tests.csproj.CoreCompileInputs.cache
+c:\Users\DorAv\Desktop\DevOps\Projects\ResumeChallenge\backend\tests\obj\Debug\net8.0\tests.sourcelink.json
+c:\Users\DorAv\Desktop\DevOps\Projects\ResumeChallenge\backend\tests\obj\Debug\net8.0\tests.dll
+c:\Users\DorAv\Desktop\DevOps\Projects\ResumeChallenge\backend\tests\obj\Debug\net8.0\refint\tests.dll
+c:\Users\DorAv\Desktop\DevOps\Projects\ResumeChallenge\backend\tests\obj\Debug\net8.0\tests.pdb
