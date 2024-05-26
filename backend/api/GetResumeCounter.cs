@@ -78,7 +78,7 @@ public static async Task<HttpResponseData> Run(
 
     public class Counter
     {
-        [JsonProperty("id")]
+        [JsonProperty("Id")]
         public string Id { get; set; }
 
         [JsonProperty("count")]
