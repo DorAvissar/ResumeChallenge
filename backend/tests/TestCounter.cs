@@ -24,8 +24,8 @@ namespace tests
             var counter = new Company.Function.Counter();
             counter.Id = "1";
             counter.Count = 2;
-            var request = TestFactory.CreateHttpRequest();
-            var response = (HttpResponseMessage) Company.Function.GetResumeCounter.Run(request, counter, out counter, logger);
+            var request = TestFactory.CreateHttpRequestData(context, requestBody);
+            var response = (HttpResponseData)Company.Function.GetResumeCounter.Run(request, executionContext).Result;
             Assert.Equal(3, counter.Count);
         }
 
