@@ -1,4 +1,4 @@
-using System;
+using System; 
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +19,7 @@ namespace Company.Function
 
         static GetResumeCounter()
         {
-            // Load configuration from local.settings.json
+            // Load configuration from local.settings.json.
             var config = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("local.settings.json", optional: true, reloadOnChange: true)
