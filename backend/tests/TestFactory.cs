@@ -1,35 +1,35 @@
-using Microsoft.AspNetCore.Http;
+using System.Threading.Tasks;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Abstractions;
-using Microsoft.Extensions.Primitives;
-using System.Collections.Generic;
+using Xunit;
+using Moq;
+using Company.Function;
 
 namespace tests
 {
-    public class TestFactory
+    public class TestCounter
     {
-    
-        public static HttpRequest CreateHttpRequest()
+        private readonly ILogger logger = new ListLogger();
+
+        [Fact]
+        public async Task TestRun()
         {
-            var context = new DefaultHttpContext();
-            var request = context.Request;
-            return request;
+            // Arrange
+            var functionContext = new Mock<FunctionContext>().Object;
+            var request = TestFactory.CreateHttpRequestData(functionContext, string.Empty);
+
+            // Act
+            var response = await GetResumeCounter.Run(request, functionContext);
+
+            // Assert
+            Assert.Equal(System.Net.HttpStatusCode.OK, response.StatusCode);
         }
+    }
 
-        public static ILogger CreateLogger(LoggerTypes type = LoggerTypes.Null)
-        {
-            ILogger logger;
-
-            if (type == LoggerTypes.List)
-            {
-                logger = new ListLogger();
-            }
-            else
-            {
-                logger = NullLoggerFactory.Instance.CreateLogger("Null Logger");
-            }
-
-            return logger;
-        }
+    // Example implementation of ListLogger (make sure this matches your actual implementation)
+    public class ListLogger : ILogger
+    {
+        // Implement ILogger methods...
     }
 }
