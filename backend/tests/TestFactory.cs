@@ -1,3 +1,4 @@
+using Microsoft.Azure.Functions.Worker;
 using System;
 using System.IO;
 using Microsoft.Azure.Functions.Worker.Http;
