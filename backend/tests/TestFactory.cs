@@ -1,29 +1,20 @@
-using Microsoft.Azure.Functions.Worker;
-using System;
-using System.IO;
-using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
-using Moq;
+using Microsoft.Extensions.Primitives;
+using System.Collections.Generic;
 
 namespace tests
 {
-    public static class TestFactory
+    public class TestFactory
     {
-        public static HttpRequestData CreateHttpRequestData(FunctionContext context, string body)
+    
+        public static HttpRequest CreateHttpRequest()
         {
-            var request = new Mock<HttpRequestData>(context);
-            var memoryStream = new MemoryStream();
-            var writer = new StreamWriter(memoryStream);
-            writer.Write(body);
-            writer.Flush();
-            memoryStream.Position = 0;
-
-            request.Setup(r => r.Body).Returns(memoryStream);
-            request.Setup(r => r.Method).Returns("GET");
-            request.Setup(r => r.Url).Returns(new Uri("https://localhost"));
-
-            return request.Object;
+            var context = new DefaultHttpContext();
+            var request = context.Request;
+            return request;
         }
 
         public static ILogger CreateLogger(LoggerTypes type = LoggerTypes.Null)

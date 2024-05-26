@@ -10,8 +10,6 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 
-
-
 namespace tests
 {
     public class TestCounter
@@ -19,7 +17,7 @@ namespace tests
         private readonly ILogger logger = TestFactory.CreateLogger();
 
         [Fact]
-        public async task Http_trigger_should_return_known_string()
+        public async void Http_trigger_should_return_known_string()
         {
             var counter = new Company.Function.Counter();
             counter.Id = "1";
