@@ -23,9 +23,10 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">C:\Users\DorAv\.nuget\packages\xunit.analyzers\1.4.0</Pkgxunit_analyzers>
+    <PkgMicrosoft_Azure_WebJobs_Script_ExtensionsMetadataGenerator Condition=" '$(PkgMicrosoft_Azure_WebJobs_Script_ExtensionsMetadataGenerator)' == '' ">C:\Users\DorAv\.nuget\packages\microsoft.azure.webjobs.script.extensionsmetadatagenerator\4.0.1</PkgMicrosoft_Azure_WebJobs_Script_ExtensionsMetadataGenerator>
+    <PkgMicrosoft_Azure_Functions_Analyzers Condition=" '$(PkgMicrosoft_Azure_Functions_Analyzers)' == '' ">C:\Users\DorAv\.nuget\packages\microsoft.azure.functions.analyzers\1.0.0</PkgMicrosoft_Azure_Functions_Analyzers>
+    <PkgMicrosoft_NET_Sdk_Functions Condition=" '$(PkgMicrosoft_NET_Sdk_Functions)' == '' ">C:\Users\DorAv\.nuget\packages\microsoft.net.sdk.functions\4.4.0</PkgMicrosoft_NET_Sdk_Functions>
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\DorAv\.nuget\packages\microsoft.codeanalysis.analyzers\1.1.0</PkgMicrosoft_CodeAnalysis_Analyzers>
-    <PkgMicrosoft_Azure_Functions_Worker_Sdk_Analyzers Condition=" '$(PkgMicrosoft_Azure_Functions_Worker_Sdk_Analyzers)' == '' ">C:\Users\DorAv\.nuget\packages\microsoft.azure.functions.worker.sdk.analyzers\1.2.1</PkgMicrosoft_Azure_Functions_Worker_Sdk_Analyzers>
-    <PkgMicrosoft_Azure_Functions_Worker_Sdk Condition=" '$(PkgMicrosoft_Azure_Functions_Worker_Sdk)' == '' ">C:\Users\DorAv\.nuget\packages\microsoft.azure.functions.worker.sdk\1.16.4</PkgMicrosoft_Azure_Functions_Worker_Sdk>
     <PkgMicrosoft_AspNetCore_Razor_Design Condition=" '$(PkgMicrosoft_AspNetCore_Razor_Design)' == '' ">C:\Users\DorAv\.nuget\packages\microsoft.aspnetcore.razor.design\2.2.0</PkgMicrosoft_AspNetCore_Razor_Design>
   </PropertyGroup>
 </Project>

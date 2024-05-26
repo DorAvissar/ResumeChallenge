@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\Tests.csproj": {}
+    "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\tests.csproj": {}
   },
   "projects": {
     "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\api\\api.csproj": {
@@ -17,14 +17,14 @@
           "C:\\Users\\DorAv\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net6.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -40,40 +40,16 @@
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.ApplicationInsights.WorkerService": {
+            "Microsoft.Azure.WebJobs.Extensions.CosmosDB": {
               "target": "Package",
-              "version": "[2.21.0, )"
+              "version": "[3.0.10, )"
             },
-            "Microsoft.Azure.Cosmos": {
+            "Microsoft.NET.Sdk.Functions": {
               "target": "Package",
-              "version": "[3.40.0-preview.1, )"
-            },
-            "Microsoft.Azure.Functions.Worker": {
-              "target": "Package",
-              "version": "[1.20.1, )"
-            },
-            "Microsoft.Azure.Functions.Worker.ApplicationInsights": {
-              "target": "Package",
-              "version": "[1.1.0, )"
-            },
-            "Microsoft.Azure.Functions.Worker.Extensions.Http": {
-              "target": "Package",
-              "version": "[3.1.0, )"
-            },
-            "Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore": {
-              "target": "Package",
-              "version": "[1.2.0, )"
-            },
-            "Microsoft.Azure.Functions.Worker.Sdk": {
-              "target": "Package",
-              "version": "[1.16.4, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.1, )"
+              "version": "[4.4.0, )"
             }
           },
           "imports": [
@@ -87,24 +63,35 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.29, 6.0.29]"
             },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.29, 6.0.29]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.29, 6.0.29]"
+            }
+          ],
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\Tests.csproj": {
+    "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\Tests.csproj",
-        "projectName": "Tests",
-        "projectPath": "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\Tests.csproj",
+        "projectUniqueName": "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\tests.csproj",
+        "projectName": "tests",
+        "projectPath": "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\tests.csproj",
         "packagesPath": "C:\\Users\\DorAv\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\DorAv\\Desktop\\DevOps\\Projects\\ResumeChallenge\\backend\\tests\\obj\\",
         "projectStyle": "PackageReference",
@@ -142,25 +129,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Http": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
             "Microsoft.AspNetCore.Mvc": {
               "target": "Package",
               "version": "[2.2.0, )"
-            },
-            "Microsoft.Azure.Functions.Worker.Extensions.CosmosDB": {
-              "target": "Package",
-              "version": "[4.8.1, )"
-            },
-            "Microsoft.Azure.WebJobs.Extensions": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            },
-            "Microsoft.Azure.WebJobs.Extensions.Http": {
-              "target": "Package",
-              "version": "[2.2.2, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",

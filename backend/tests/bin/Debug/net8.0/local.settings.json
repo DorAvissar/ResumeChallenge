@@ -2,7 +2,11 @@
   "IsEncrypted": false,
   "Values": {
     "AzureWebJobsStorage": "",
-    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
-    "AzureResumeConnectionString":"AccountEndpoint=https://azureresumedor.documents.azure.com:443/;AccountKey=irOgGM32bEK9vqD1w0zzVyF5VukkGhjd3cifXsAdopyMY0VOCCNAPgS4sHEnzL4jqwp5YHG0HjrQACDbvHN1SA==;"
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "AzureResumeConnectionString":"AccountEndpoint=https://dbyahavazureresume.documents.azure.com:443/;AccountKey=iZci4IIUugFxzwb9IQGZ4bLqj5QqEJqXFTMfyhAzym4N03zMsBAg5Mx4Ivtlphh6MbhNYiH061c0ACDbd5ZYxA==;"
+  },
+  "Host":
+  {
+    "CORS": "*"
   }
 }
