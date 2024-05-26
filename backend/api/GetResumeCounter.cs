@@ -52,7 +52,7 @@ public static async Task<HttpResponseData> Run(
         // Update the item ! 
         counter.Count += 1;
 
-        // Replace the item in the database
+        // Replace the item in the database.
         await container.ReplaceItemAsync(counter, "1", new PartitionKey("1"));
 
         var jsonToReturn = JsonConvert.SerializeObject(counter);
