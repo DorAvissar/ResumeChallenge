@@ -1,35 +1,44 @@
-using System.Threading.Tasks;
-using Microsoft.Azure.Functions.Worker;
+using System;
+using System.IO;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
-using Xunit;
+using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
-using Company.Function;
 
 namespace tests
 {
-    public class TestCounter
+    public static class TestFactory
     {
-        private readonly ILogger logger = new ListLogger();
-
-        [Fact]
-        public async Task TestRun()
+        public static HttpRequestData CreateHttpRequestData(FunctionContext context, string body)
         {
-            // Arrange
-            var functionContext = new Mock<FunctionContext>().Object;
-            var request = TestFactory.CreateHttpRequestData(functionContext, string.Empty);
+            var request = new Mock<HttpRequestData>(context);
+            var memoryStream = new MemoryStream();
+            var writer = new StreamWriter(memoryStream);
+            writer.Write(body);
+            writer.Flush();
+            memoryStream.Position = 0;
 
-            // Act
-            var response = await GetResumeCounter.Run(request, functionContext);
+            request.Setup(r => r.Body).Returns(memoryStream);
+            request.Setup(r => r.Method).Returns("GET");
+            request.Setup(r => r.Url).Returns(new Uri("https://localhost"));
 
-            // Assert
-            Assert.Equal(System.Net.HttpStatusCode.OK, response.StatusCode);
+            return request.Object;
         }
-    }
 
-    // Example implementation of ListLogger (make sure this matches your actual implementation)
-    public class ListLogger : ILogger
-    {
-        // Implement ILogger methods...
+        public static ILogger CreateLogger(LoggerTypes type = LoggerTypes.Null)
+        {
+            ILogger logger;
+
+            if (type == LoggerTypes.List)
+            {
+                logger = new ListLogger();
+            }
+            else
+            {
+                logger = NullLoggerFactory.Instance.CreateLogger("Null Logger");
+            }
+
+            return logger;
+        }
     }
 }
