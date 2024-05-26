@@ -1,8 +1,0 @@
-{
-  "IsEncrypted": false,
-  "Values": {
-    "AzureWebJobsStorage": "",
-    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
-    "AzureResumeConnectionString":"AccountEndpoint=https://azureresume-dor.documents.azure.com:443/;AccountKey=7zXk1PDwWP0knFMVQ9t3rCejnTATIQF0hYkUr3WOW5wMvDpksb7muiidmhkzOErjnFwsm5ZyTKc4ACDbNmEVkQ==;"
-  }
-}
