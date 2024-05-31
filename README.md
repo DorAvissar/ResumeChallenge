@@ -1,6 +1,6 @@
 # Azure Cloud Resume Challenge
 Welcome to my Cloud Resume Challenge for Azure project! ☁️
-<img src="https://github.com/DorAvissar/ResumeChallenge-/blob/main/diagram.png?raw=true">
+<img src="https://media.licdn.com/dms/image/D4E12AQFqgBia89Ssyw/article-cover_image-shrink_720_1280/0/1689209856218?e=1722470400&v=beta&t=mCb9g1OVBAyjEkXfefkDIw83gTyWF61zd7ykEAyjAi0">
 
 I began by mastering the basics and earned my AZ-900 Azure Fundamentals certification. After completing the certification, I dedicated myself to the Cloud Resume Challenge for Azure.
 
